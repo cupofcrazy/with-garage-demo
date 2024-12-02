@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const URL = "https://garage-backend.onrender.com/getListing"
+const BACKEND_URL = "https://garage-backend.onrender.com/getListing"
 
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
   const id = params.id;
 
-  const res = await fetch(`${URL}`, {
+  const res = await fetch(`${BACKEND_URL}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
