@@ -8,12 +8,11 @@ import { cn } from "@/lib/utils";
 
 
 interface CarouselProps {
-  images: string[];
-  isOpen?: boolean;
+  images: string[]; 
   onClose?: () => void;
 }
 
-const Carousel = ({ images, isOpen, onClose }: CarouselProps) => {
+const Carousel = ({ images, onClose }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true
@@ -25,11 +24,11 @@ const Carousel = ({ images, isOpen, onClose }: CarouselProps) => {
 
   const scrollPrev = useCallback(() => {
     emblaApi?.scrollPrev();
-  }, [emblaApi, thumbsApi]);
+  }, [emblaApi]);
 
   const scrollNext = useCallback(() => {
     emblaApi?.scrollNext();
-  }, [emblaApi, thumbsApi]);
+  }, [emblaApi]);
 
   const onThumbClick = useCallback((index: number) => {
     if (!emblaApi || !thumbsApi) return;

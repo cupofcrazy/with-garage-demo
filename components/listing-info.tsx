@@ -99,7 +99,6 @@ export function ListingInfo({ listing }: ListingInfoProps) {
                   <Dialog.Description className="sr-only">View All Photos</Dialog.Description>
                   <Carousel 
                     images={listing.imageUrls} 
-                    isOpen={isCarouselOpen} 
                     onClose={() => setIsCarouselOpen(false)} 
                   />
                 </Dialog.Content>
